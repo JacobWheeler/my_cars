@@ -1,0 +1,48 @@
+<% if @car.errors.any? %>
+  <h4> <%= @car.errors.count %> Errors Saving The Car </h4>
+  <% @car.errors.full_messages.each do |message| %>
+    <h6 class='text-danger'> <%= message %> </h6>
+  <% end %>
+<% end %>
+
+<%= form_for @car, html: { class: 'form-horizontal'} do |f| %>
+  <div class="form-group">
+    <%= f.label :make, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :make, required: true, class: 'form-control', placeholder: 'Car Make' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :model, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :model, required: true, class: 'form-control', placeholder: 'Car Model' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :color, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :color, required: true, class: 'form-control', placeholder: 'Car Color' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :year, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :year, required: true, class: 'form-control', placeholder: 'Car Year' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :mileage, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :mileage, required: true, class: 'form-control', placeholder: 'Car Mileage' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :runs, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.check_box :runs, required: true, class: 'form-control', checked: true %>
+    </div>
+  </div>
+  <div class='text-center'>
+    <%= f.submit nil, class: 'btn btn-primary' %>
+  </div>
+<% end %>

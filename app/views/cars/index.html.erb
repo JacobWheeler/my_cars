@@ -1,0 +1,26 @@
+<h1> Cars For <%= current_user.email %> </h1>
+<hr />
+
+<% if @cars.any? %>
+
+  <ul class='list-group'>
+    <% @cars.each do |car| %>
+      <li class='list-group-item'>
+         <%= car.info %>
+         <%= link_to 'Show', car_path(car), class: 'btn btn-primary' %>
+         <%= link_to 'Edit', edit_car_path(car), class: 'btn btn-warning' %>
+         <%= link_to 'Delete',
+                      car_path(car),
+                      class: 'btn btn-danger',
+                      data: { confirm: 'Really Delete?'},
+                      method: :delete
+         %>
+      </li>
+    <% end %>
+  </ul>
+
+<% else %>
+<h3>No Cars, Go Buy One!</h3>
+<% end %>
+
+<%= link_to 'Buy New Car', new_car_path, class: 'btn btn-primary' %>

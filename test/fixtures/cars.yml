@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: MyString
+  model: MyString
+  color: MyString
+  year: 1
+  mileage: 1
+  runs: false
+  user: one
+
+two:
+  make: MyString
+  model: MyString
+  color: MyString
+  year: 1
+  mileage: 1
+  runs: false
+  user: two
